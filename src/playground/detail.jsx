@@ -7,6 +7,7 @@ import {compose} from 'redux';
 
 import Box from '../components/box/box.jsx';
 import Header from '../components/dash/header/header.jsx';
+import Footer from '../components/dash/footer/footer.jsx';
 import GUI from '../containers/gui.jsx';
 import HashParserHOC from '../lib/hash-parser-hoc.jsx';
 import AppStateHOC from '../lib/app-state-hoc.jsx';
@@ -21,7 +22,11 @@ if (process.env.NODE_ENV === 'production' && typeof window === 'object') {
 import styles from './detail.css';
 
 const Player = ({isPlayerOnly, onSeeInside, projectId}) => (
-    <Header ></Header>
+    <Box>
+        <Header/>
+        fsf
+        <Footer/>
+    </Box>
 );
 
 Player.propTypes = {
@@ -54,4 +59,4 @@ const WrappedPlayer = compose(
 const appTarget = document.createElement('div');
 document.body.appendChild(appTarget);
 
-ReactDOM.render(<WrappedPlayer isPlayerOnly />, appTarget);
+ReactDOM.render(<WrappedPlayer isPlayerOnly/>, appTarget);

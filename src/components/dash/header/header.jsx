@@ -30,7 +30,9 @@ const Header = function (props) {
                     <SubMenu title="发现" key="2"/>
                 </Menu>
             </a>
-            xxx
+            <div className={classNames(styles['login'])}>
+                <a href="#" ><span className={classNames(styles['txt'])}>登录</span></a>
+            </div>
         </div>
     );
 };

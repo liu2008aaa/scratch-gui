@@ -1,0 +1,73 @@
+
+.footer-view {
+    width: 100%;
+    height: 260px;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-title-view {
+    box-sizing: border-box;
+    flex: 0 0 50%;
+    padding: 10px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.about_title {
+    font-size: 15px;
+    color: #f0f0f0;
+}
+
+.about_school {
+    color: #909399;
+    font-size: 13px;
+}
+
+.about {
+    color: #909399;
+    font-size: 13px;
+}
+
+.contact_title {
+    font-size: 15px;
+    color: #f0f0f0;
+}
+
+.contact_address {
+    color: #909399;
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+.contact_phone {
+    color: #909399;
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+
+.qrcodeIcon {
+    width: 96px;
+    height: 96px;
+    margin-top: 10px;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 13px;
+    color: #909399;
+}
