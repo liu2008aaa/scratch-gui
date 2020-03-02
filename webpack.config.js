@@ -58,32 +58,39 @@ const base = {
                 presets: ['@babel/preset-env', '@babel/preset-react']
             }
         },
-        {
-            test: /\.css$/,
-            use: [{
-                loader: 'style-loader'
-            }, {
-                loader: 'css-loader',
-                options: {
-                    modules: true,
-                    importLoaders: 1,
-                    localIdentName: '[name]_[local]_[hash:base64:5]',
-                    camelCase: true
-                }
-            }, {
-                loader: 'postcss-loader',
-                options: {
-                    ident: 'postcss',
-                    plugins: function () {
-                        return [
-                            postcssImport,
-                            postcssVars,
-                            autoprefixer
-                        ];
-                    }
-                }
-            }]
-        }]
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: 'style-loader'
+                    }, {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            importLoaders: 1,
+                            localIdentName: '[name]_[local]_[hash:base64:5]',
+                            camelCase: true
+                        }
+                    }, {
+                        loader: 'postcss-loader',
+                        options: {
+                            ident: 'postcss',
+                            plugins: function () {
+                                return [
+                                    postcssImport,
+                                    postcssVars,
+                                    autoprefixer
+                                ];
+                            }
+                        }
+                    }]
+            },
+            {
+                test: /\.less$/,
+                use: ['style-loader','css-loader',"less-loader"]
+            },
+
+        ]
     },
     optimization: {
         minimizer: [
@@ -103,7 +110,8 @@ module.exports = [
             'gui': './src/playground/index.jsx',
             'blocksonly': './src/playground/blocks-only.jsx',
             'compatibilitytesting': './src/playground/compatibility-testing.jsx',
-            'player': './src/playground/player.jsx'
+            'player': './src/playground/player.jsx',
+            'detail': './src/playground/detail.jsx'
         },
         output: {
             path: path.resolve(__dirname, 'build'),
@@ -162,6 +170,12 @@ module.exports = [
                 template: 'src/playground/index.ejs',
                 filename: 'player.html',
                 title: 'Scratch 3.0 GUI: Player Example'
+            }),
+            new HtmlWebpackPlugin({
+                chunks: ['lib.min', 'detail'],
+                template: 'src/playground/index.ejs',
+                filename: 'detail.html',
+                title: 'Scratch 3.0 GUI: Detail Example'
             }),
             new CopyWebpackPlugin([{
                 from: 'static',
