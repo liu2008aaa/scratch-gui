@@ -9,6 +9,7 @@ import Stage from '../../containers/stage.jsx';
 import Loader from '../loader/loader.jsx';
 
 import styles from './stage-wrapper.css';
+import {STAGE_SIZE_MODES} from "../../lib/layout-constants";
 
 const StageWrapperComponent = function (props) {
     const {
@@ -25,9 +26,9 @@ const StageWrapperComponent = function (props) {
             className={styles.stageWrapper}
             dir={isRtl ? 'rtl' : 'ltr'}
         >
-            <Box className={styles.stageMenuWrapper}>
+            <Box className={stageSize == STAGE_SIZE_MODES.detail ? styles.stageMenuDetailWrapper : ''}>
                 <StageHeader
-                    stageSize={stageSize}
+                    stageSizeMode={stageSize}
                     vm={vm}
                 />
             </Box>

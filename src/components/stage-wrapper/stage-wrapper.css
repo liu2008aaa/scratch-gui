@@ -9,3 +9,6 @@
     /* Hides negative space between edge of rounded corners + container, when selected */
     user-select: none;
 }
+.stageMenuDetailWrapper{
+    width: 720px;
+}

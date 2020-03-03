@@ -1,5 +1,31 @@
 body {
     width: 100%;
     margin: 0;
-    /*margin-top: -20px;*/
+    background-color: #f0f0f0;
+}
+.stage-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.stage-view {
+    width:1024px;
+    height: 768px;
+    margin-top: 15px;
+    background-color: #fff;
+    padding:30px;
+    border-radius: 8px;
+}
+.box-view{
+    display: flex;
+    width: 100%;
+    border-color: #3a3232;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.stage-box {
+    border-color: #3a3232;
+    border-width: 1px;
+    border-style: solid;
 }

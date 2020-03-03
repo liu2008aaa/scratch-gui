@@ -6,9 +6,10 @@ import {connect} from 'react-redux';
 import {compose} from 'redux';
 
 import Box from '../components/box/box.jsx';
+import GUI from '../containers/gui.jsx';
 import Header from '../components/dash/header/header.jsx';
 import Footer from '../components/dash/footer/footer.jsx';
-import GUI from '../containers/gui.jsx';
+
 import HashParserHOC from '../lib/hash-parser-hoc.jsx';
 import AppStateHOC from '../lib/app-state-hoc.jsx';
 
@@ -20,11 +21,26 @@ if (process.env.NODE_ENV === 'production' && typeof window === 'object') {
 }
 
 import styles from './detail.css';
+import {STAGE_SIZE_MODES} from "../lib/layout-constants";
+
 
 const Player = ({isPlayerOnly, onSeeInside, projectId}) => (
     <Box>
         <Header/>
-        fsf
+        <div className={styles['stage-container']}>
+            <div className={styles['stage-view']}>
+                <div>作品名称</div>
+                <div>作者</div>
+                <div className={styles['box-view']}>
+                    <Box className={classNames(styles['stage-box'])}>
+                        <GUI stageDetailSize={STAGE_SIZE_MODES.detail} isPlayerOnly={isPlayerOnly}/>
+                    </Box>
+                    <div>xxx</div>
+                </div>
+                <div>xxx</div>
+            </div>
+        </div>
+        <div className={styles['stage-container']}>xx</div>
         <Footer/>
     </Box>
 );

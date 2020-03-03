@@ -111,6 +111,7 @@ const GUIComponent = props => {
         showComingSoon,
         soundsTabVisible,
         stageSizeMode,
+        stageDetailSize,
         targetIsStage,
         telemetryModalVisible,
         tipsLibraryVisible,
@@ -143,7 +144,7 @@ const GUIComponent = props => {
                 isRendererSupported={isRendererSupported}
                 isRtl={isRtl}
                 loading={loading}
-                stageSize={STAGE_SIZE_MODES.large}
+                stageSize={stageDetailSize}
                 vm={vm}
             >
                 {alertsVisible ? (
@@ -411,7 +412,8 @@ GUIComponent.propTypes = {
     targetIsStage: PropTypes.bool,
     telemetryModalVisible: PropTypes.bool,
     tipsLibraryVisible: PropTypes.bool,
-    vm: PropTypes.instanceOf(VM).isRequired
+    vm: PropTypes.instanceOf(VM).isRequired,
+    stageDetailSize: PropTypes.oneOf(Object.keys(STAGE_SIZE_MODES)),
 };
 GUIComponent.defaultProps = {
     backpackHost: null,
@@ -431,7 +433,8 @@ GUIComponent.defaultProps = {
     isShared: false,
     loading: false,
     showComingSoon: false,
-    stageSizeMode: STAGE_SIZE_MODES.large
+    stageSizeMode: STAGE_SIZE_MODES.large,
+    stageDetailSize:STAGE_SIZE_MODES.large,
 };
 
 const mapStateToProps = state => ({

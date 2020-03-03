@@ -38,6 +38,7 @@ import cloudManagerHOC from '../lib/cloud-manager-hoc.jsx';
 
 import GUIComponent from '../components/gui/gui.jsx';
 import {setIsScratchDesktop} from '../lib/isScratchDesktop.js';
+import {STAGE_SIZE_MODES} from "../lib/layout-constants";
 
 class GUI extends React.Component {
     componentDidMount () {
@@ -75,6 +76,7 @@ class GUI extends React.Component {
             projectHost,
             projectId,
             /* eslint-enable no-unused-vars */
+            stageDetailSize,
             children,
             fetchingProject,
             isLoading,
@@ -84,6 +86,7 @@ class GUI extends React.Component {
         return (
             <GUIComponent
                 loading={fetchingProject || isLoading || loadingStateVisible}
+                stageDetailSize={stageDetailSize}
                 {...componentProps}
             >
                 {children}
@@ -112,7 +115,8 @@ GUI.propTypes = {
     projectHost: PropTypes.string,
     projectId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     telemetryModalVisible: PropTypes.bool,
-    vm: PropTypes.instanceOf(VM).isRequired
+    vm: PropTypes.instanceOf(VM).isRequired,
+    stageDetailSize:PropTypes.oneOf(Object.keys(STAGE_SIZE_MODES)),
 };
 
 GUI.defaultProps = {
@@ -120,7 +124,8 @@ GUI.defaultProps = {
     onStorageInit: storageInstance => storageInstance.addOfficialScratchWebStores(),
     onProjectLoaded: () => {},
     onUpdateProjectId: () => {},
-    onVmInit: (/* vm */) => {}
+    onVmInit: (/* vm */) => {},
+    stageDetailSize:STAGE_SIZE_MODES.large,
 };
 
 const mapStateToProps = state => {
