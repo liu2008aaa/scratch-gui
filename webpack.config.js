@@ -175,7 +175,7 @@ module.exports = [
                 chunks: ['lib.min', 'detail'],
                 template: 'src/playground/index.ejs',
                 filename: 'detail.html',
-                title: 'Scratch 3.0 GUI: Detail Example'
+                title: 'DASH编程学院'
             }),
             new CopyWebpackPlugin([{
                 from: 'static',
