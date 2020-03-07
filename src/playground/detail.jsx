@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 import {compose} from 'redux';
 
+import Button from '../components/button/button.jsx';
 import Box from '../components/box/box.jsx';
 import GUI from '../containers/gui.jsx';
 import Header from '../components/dash/header/header.jsx';
@@ -33,8 +34,9 @@ const Player = ({isPlayerOnly, onSeeInside, projectId}) => (
             <div className={styles['stage-view']}>
                 <span className={styles['prod-title']}>作品名称</span>
                 <div className={styles['prod-author-view']}>
-                    <img className={styles['head-img']} src={headImg}/>
-                    <span className={styles['prod-author-name']}>作者</span>
+                    {/*<img className={styles['head-img']} src={headImg}/>*/}
+                    {/*<span className={styles['prod-author-name']}>作者</span>*/}
+                    <Button iconSrc={headImg} iconClassName={styles['head-img']} className={styles['prod-author-name']}>作者</Button>
                     <span className={styles['prod-update-time']}>更新于: 2020-03-03</span>
                 </div>
                 <div className={styles['box-view']}>
@@ -62,12 +64,14 @@ const Player = ({isPlayerOnly, onSeeInside, projectId}) => (
                             <span>操作说明：</span>
                             <span className={styles['prod-intro-txt']}>鼠标操作，也可以方向键操作。玩法简单。</span>
                         </div>
-                        <div>改编</div>
+                        <div className={styles['prod-btns-view']}>
+                            <Button className={styles.btn1}>改编</Button>
+                            <Button className={styles.btn2}>查看创作页</Button>
+                        </div>
                     </div>
                 </div>
                 <div className={styles['prod-bottom-view']}>
-                    <img className={styles['prod-bottom-img']} src={zanImg}/>
-                    <span className={styles['zan-num-txt']}>123</span>
+                    <Button iconSrc={zanImg} iconClassName={styles['prod-bottom-img']} className={styles['zan-num-txt']}>123</Button>
                 </div>
             </div>
         </div>
