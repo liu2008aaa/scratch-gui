@@ -64,9 +64,6 @@ const Player = ({isPlayerOnly, onSeeInside, projectId}) => (
                             className={styles['zan-num-txt']}>123</Button>
                 </div>
             </div>
-            <div className={styles['stage-view']}>
-                xx
-            </div>
         </div>
         <Footer/>
     </Box>
