@@ -34,9 +34,8 @@ const Player = ({isPlayerOnly, onSeeInside, projectId}) => (
             <div className={styles['stage-view']}>
                 <span className={styles['prod-title']}>作品名称</span>
                 <div className={styles['prod-author-view']}>
-                    {/*<img className={styles['head-img']} src={headImg}/>*/}
-                    {/*<span className={styles['prod-author-name']}>作者</span>*/}
-                    <Button iconSrc={headImg} iconClassName={styles['head-img']} className={styles['prod-author-name']}>作者</Button>
+                    <Button iconSrc={headImg} iconClassName={styles['head-img']}
+                            className={styles['prod-author-name']}>作者</Button>
                     <span className={styles['prod-update-time']}>更新于: 2020-03-03</span>
                 </div>
                 <div className={styles['box-view']}>
@@ -46,21 +45,11 @@ const Player = ({isPlayerOnly, onSeeInside, projectId}) => (
                     <div className={styles['prod-right-view']}>
                         <div className={styles['prod-intro-view']}>
                             <span>作品介绍：</span>
-                            <span className={styles['prod-intro-txt']}>本作品为改编版。不喜勿喷。记得素质三连（点赞收藏五星）
-                                加载好之后点击play即可开始游戏
-
-                                今天看到一款特别好玩的持续更新游戏，这是游戏网址
-                                https://kada.163.com/project/3894255-3465292.htm
-
-                                今天看到一款特别好玩的持续更新游戏，这是游戏网址
-                                https://kada.163.com/project/3894255-3465292.htm
-
-                                一款休闲娱乐的持续更新游戏https://kada.163.com/project/3894255-3465292.htm
-
-                                https://kada.163.com/project/3872598-3467255.htm
-                                各位想打广告的朋友，打开上面的网址点赞 收藏 五星，我就可以不删你广告
-
-                            </span>
+                            <div style={{height: 350}}>
+                                <span className={styles['prod-intro-txt']}>
+                                    本作品为改编版。不喜勿喷。记得素质三连（点赞收藏五星）
+                                </span>
+                            </div>
                             <span>操作说明：</span>
                             <span className={styles['prod-intro-txt']}>鼠标操作，也可以方向键操作。玩法简单。</span>
                         </div>
@@ -71,8 +60,12 @@ const Player = ({isPlayerOnly, onSeeInside, projectId}) => (
                     </div>
                 </div>
                 <div className={styles['prod-bottom-view']}>
-                    <Button iconSrc={zanImg} iconClassName={styles['prod-bottom-img']} className={styles['zan-num-txt']}>123</Button>
+                    <Button iconSrc={zanImg} iconClassName={styles['prod-bottom-img']}
+                            className={styles['zan-num-txt']}>123</Button>
                 </div>
+            </div>
+            <div className={styles['stage-view']}>
+                xx
             </div>
         </div>
         <Footer/>
