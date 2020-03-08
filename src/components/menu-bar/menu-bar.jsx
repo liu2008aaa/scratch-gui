@@ -13,6 +13,7 @@ import Box from '../box/box.jsx';
 import Button from '../button/button.jsx';
 import CommunityButton from './community-button.jsx';
 import ShareButton from './share-button.jsx';
+import SaveButton from '../dash/save-button.jsx';
 import {ComingSoonTooltip} from '../coming-soon/coming-soon.jsx';
 import Divider from '../divider/divider.jsx';
 import LanguageSelector from '../../containers/language-selector.jsx';
@@ -527,14 +528,12 @@ class MenuBar extends React.Component {
                             )
                         ) : (
                             this.props.showComingSoon ? (
-                                <MenuBarItemTooltip id="share-button">
-                                    <ShareButton className={styles.menuBarButton} />
-                                </MenuBarItemTooltip>
+                                <SaveButton className={styles.menuBarButton} />
                             ) : []
                         )}
                         {this.props.canRemix ? remixButton : []}
                     </div>
-                    <div className={classNames(styles.menuBarItem, styles.communityButtonWrapper)}>
+                    <div className={classNames(styles.menuBarItem, styles.communityButtonWrapper)} style={{display:'none'}}>
                         {this.props.enableCommunity ? (
                             (this.props.isShowingProject || this.props.isUpdating) && (
                                 <ProjectWatcher onDoneUpdating={this.props.onSeeCommunity}>
@@ -646,44 +645,22 @@ class MenuBar extends React.Component {
                         <React.Fragment>
                             {this.props.showComingSoon ? (
                                 <React.Fragment>
-                                    <MenuBarItemTooltip id="mystuff">
                                         <div
                                             className={classNames(
                                                 styles.menuBarItem,
                                                 styles.hoverable,
-                                                styles.mystuffButton
                                             )}
-                                        >
-                                            <img
-                                                className={styles.mystuffIcon}
-                                                src={mystuffIcon}
-                                            />
-                                        </div>
-                                    </MenuBarItemTooltip>
-                                    <MenuBarItemTooltip
-                                        id="account-nav"
-                                        place={this.props.isRtl ? 'right' : 'left'}
-                                    >
-                                        <div
-                                            className={classNames(
-                                                styles.menuBarItem,
-                                                styles.hoverable,
-                                                styles.accountNavMenu
-                                            )}
+                                            style={{marginRight:'20px'}}
                                         >
                                             <img
                                                 className={styles.profileIcon}
                                                 src={profileIcon}
+                                                style={{display:'none'}}
                                             />
                                             <span>
-                                                {'scratch-cat'}
+                                                {'登录'}
                                             </span>
-                                            <img
-                                                className={styles.dropdownCaretIcon}
-                                                src={dropdownCaret}
-                                            />
                                         </div>
-                                    </MenuBarItemTooltip>
                                 </React.Fragment>
                             ) : []}
                         </React.Fragment>

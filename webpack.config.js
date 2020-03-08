@@ -111,7 +111,8 @@ module.exports = [
             'blocksonly': './src/playground/blocks-only.jsx',
             'compatibilitytesting': './src/playground/compatibility-testing.jsx',
             'player': './src/playground/player.jsx',
-            'detail': './src/playground/detail.jsx'
+            'detail': './src/playground/detail.jsx',
+            'editor': './src/playground/editor.jsx'
         },
         output: {
             path: path.resolve(__dirname, 'build'),
@@ -175,6 +176,12 @@ module.exports = [
                 chunks: ['lib.min', 'detail'],
                 template: 'src/playground/index.ejs',
                 filename: 'detail.html',
+                title: 'DASH编程学院'
+            }),
+            new HtmlWebpackPlugin({
+                chunks: ['lib.min', 'editor'],
+                template: 'src/playground/index.ejs',
+                filename: 'editor.html',
                 title: 'DASH编程学院'
             }),
             new CopyWebpackPlugin([{
