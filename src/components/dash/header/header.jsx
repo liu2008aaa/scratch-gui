@@ -28,6 +28,7 @@ const Header = function (props) {
                     openAnimation="slide-up">
                     <SubMenu title="首页" key="1"/>
                     <SubMenu title="发现" key="2"/>
+                    <SubMenu title="创作" key="3"/>
                 </Menu>
             </a>
             <div className={classNames(styles['login'])}>
